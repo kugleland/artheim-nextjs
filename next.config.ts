@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "app.artheim.test",
       },
+      {
+        protocol: "https",
+        hostname: "ar-t.indev.dk",
+      },
     ],
   },
   allowedDevOrigins: ["http://localhost:3000", "192.168.68.109"],
