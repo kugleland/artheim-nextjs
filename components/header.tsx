@@ -66,7 +66,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="https://auth.dinkunstplatform.dk/login"
+            href="https://app.ar-t.indev.dk/login"
             className="mt-4 bg-black text-white text-center py-2 rounded hover:bg-gray-800 transition"
           >
             Log ind
