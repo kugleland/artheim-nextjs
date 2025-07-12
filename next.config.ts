@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "ar-t.indev.dk",
+        hostname: "app.ar-t.indev.dk",
       },
     ],
   },
