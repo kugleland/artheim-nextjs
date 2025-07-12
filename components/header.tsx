@@ -38,7 +38,7 @@ export default function Header() {
           </Link>
         ))}
         <a
-          href="https://app.artheim.test/login"
+          href="https://app.ar-t.indev.dk/login"
           className="bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800 transition"
         >
           Log ind

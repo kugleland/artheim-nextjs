@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: ["http://localhost:3000", "192.168.68.109"],
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;

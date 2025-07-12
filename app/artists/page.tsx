@@ -7,8 +7,15 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
+type Artist = {
+  id: string;
+  alias: string;
+  first_name: string;
+  last_name: string;
+};
+
 export default async function Artists() {
-  const data = await fetch("https://app.artheim.test/api/artists");
+  const data = await fetch("https://app.ar-t.indev.dk/api/artists");
   const artists = await data.json();
 
   return (
@@ -28,7 +35,7 @@ export default async function Artists() {
       </div>
       <h1>Artists</h1>
       <ul className="list-disc list-inside">
-        {artists.data.map((artist: any) => (
+        {artists.data.map((artist: Artist) => (
           <li key={artist.id} className="mb-4">
             <Link href={`/artists/${artist.id}`} className="text-lg font-bold">
               {artist.alias || artist.first_name + " " + artist.last_name}

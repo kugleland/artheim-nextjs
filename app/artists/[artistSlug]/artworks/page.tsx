@@ -16,17 +16,21 @@ export default async function ArtworkIndexPage({
   const { artistSlug } = await params;
 
   const data = await fetch(
-    `https://app.artheim.test/api/artists/${artistSlug}/artworks`
+    `https://app.ar-t.indev.dk/api/artists/${artistSlug}/artworks`
   );
   const artworks = await data.json();
 
-  console.log(artworks);
+  type Artwork = {
+    id: string;
+    title: string;
+    primary_image_url: string;
+  };
 
   return (
     <div>
       <h1>Artwork Index: {artistSlug}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        {artworks.map((artwork: any) => (
+        {artworks.map((artwork: Artwork) => (
           <div key={artwork.id} className="mb-4">
             <Card>
               <CardHeader>

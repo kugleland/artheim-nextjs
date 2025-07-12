@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardFooter,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,7 +11,7 @@ export default async function ArtistDetailPage({
   const { artistSlug } = await params;
 
   const data = await fetch(
-    `https://app.artheim.test/api/artists/${artistSlug}`
+    `https://app.ar-t.indev.dk/api/artists/${artistSlug}`
   );
   const artist = await data.json();
 

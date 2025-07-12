@@ -7,11 +7,11 @@ const ARModelViewer = dynamic(() => import("@/components/ar-model-viewer"), {
 export default async function ArtworkPreviewPage({
   params,
 }: {
-  params: { artistSlug: string; artworkSlug: string };
+  params: Promise<{ artistSlug: string; artworkSlug: string }>;
 }) {
   const { artistSlug, artworkSlug } = await params;
   const data = await fetch(
-    `https://app.artheim.test/api/artists/${artistSlug}/artworks/${artworkSlug}`
+    `https://app.ar-t.indev.dk/api/artists/${artistSlug}/artworks/${artworkSlug}`
   );
   const artwork = await data.json();
 
