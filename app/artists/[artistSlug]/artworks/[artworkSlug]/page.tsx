@@ -137,6 +137,7 @@ export default async function ArtworkDetailPage({
             src="/assets/models/simple-plane-front-back.glb"
             textureUrl={artwork.primary_image_url}
             scale={`${artwork.width / 100} 0.5 ${artwork.height / 100}`}
+            showArButton={false}
           />
           <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center">
             <Button asChild>

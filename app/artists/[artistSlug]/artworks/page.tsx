@@ -29,7 +29,9 @@ export default async function ArtworkIndexPage({
     title: string;
     primary_image_url: string;
     price: number;
+    price_formatted: string;
     medium: string;
+    year: string;
   };
 
   return (
@@ -93,7 +95,7 @@ export default async function ArtworkIndexPage({
       <div className="">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {artworks.map((artwork: Artwork) => (
+            {artworks.data.map((artwork: Artwork) => (
               <div key={artwork.id} className="group relative">
                 <Image
                   src={artwork.primary_image_url}
@@ -118,11 +120,13 @@ export default async function ArtworkIndexPage({
                     <p className="mt-1 text-sm text-gray-500">{artwork.year}</p>
                   </div>
                   <p className="text-sm font-medium text-gray-900">
-                    DKK{" "}
-                    {artwork.price.toLocaleString("da-DK", {
-                      style: "currency",
-                      currency: "DKK",
-                    })}
+                    {artwork.price ? (
+                      <>
+                        {artwork.price_formatted}}
+                      </>
+                    ) : (
+                      "Kontakt for pris"
+                    )}
                   </p>
                 </div>
               </div>

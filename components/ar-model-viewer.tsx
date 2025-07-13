@@ -19,6 +19,7 @@ type ModelViewerProps = {
   height?: string;
   textureUrl?: string;
   scale?: string;
+  showArButton?: boolean;
 };
 
 export default function ARModelViewer({
@@ -34,6 +35,7 @@ export default function ARModelViewer({
   textureUrl = "",
   className = "w-full h-full relative",
   scale = "1 1 1",
+  showArButton = true,
 }: ModelViewerProps) {
   const viewerRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -113,11 +115,13 @@ export default function ARModelViewer({
       }}
       className={className}
     >
-      <div className="controls absolute bottom-0 right-0">
-        <Button slot="ar-button" className="ar-button">
-          <Rotate3D className="w-4 h-4" /> Se på din egen væg
-        </Button>
-      </div>
+      {showArButton && (
+        <div className="controls absolute bottom-0 right-0">
+          <Button slot="ar-button" className="ar-button">
+            <Rotate3D className="w-4 h-4" /> Se på din egen væg
+          </Button>
+        </div>
+      )}
     </model-viewer>
   );
 }
