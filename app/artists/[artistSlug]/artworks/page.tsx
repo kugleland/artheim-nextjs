@@ -120,13 +120,7 @@ export default async function ArtworkIndexPage({
                     <p className="mt-1 text-sm text-gray-500">{artwork.year}</p>
                   </div>
                   <p className="text-sm font-medium text-gray-900">
-                    {artwork.price ? (
-                      <>
-                        {artwork.price_formatted}}
-                      </>
-                    ) : (
-                      "Kontakt for pris"
-                    )}
+                    {artwork.price_formatted ?? "Kontakt for pris"}
                   </p>
                 </div>
               </div>
