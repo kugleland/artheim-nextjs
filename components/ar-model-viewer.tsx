@@ -2,6 +2,8 @@
 
 import "@google/model-viewer";
 import { useEffect, useRef } from "react";
+import { Button } from "./ui/button";
+import { Rotate3D } from "lucide-react";
 
 type ModelViewerProps = {
   src: string;
@@ -47,13 +49,13 @@ export default function ARModelViewer({
       angle += direction * 0.1; // degrees per frame
 
       // Reverse direction at limits
-      if (angle >= 20 || angle <= -20) {
+      if (angle >= 30 || angle <= -30) {
         direction *= -1;
       }
 
       // Convert to radians and set camera orbit
       const rad = (angle * Math.PI) / 180;
-      modelViewer.cameraOrbit = `${rad}rad 90deg 4m`; // azimuth, elevation, distance
+      modelViewer.cameraOrbit = `${rad}rad 90deg 10m`; // azimuth, elevation, distance
 
       requestAnimationFrame(animateOscillation);
     }
@@ -103,14 +105,19 @@ export default function ARModelViewer({
       scale={scale}
       xr-environment
       id="artViewer"
-      style={{ width: "100%", height: "500px", maxHeight: "100%" }}
+      style={{
+        width: "100%",
+        minHeight: "500px",
+        height: "100%",
+        maxHeight: "100%",
+      }}
       className={className}
     >
-      {/* <div className="controls absolute bottom-0 right-0 bg-neutral-500 p-1">
-        <button slot="ar-button" className="ar-button">
-          View in your space
-        </button>
-      </div> */}
+      <div className="controls absolute bottom-0 right-0">
+        <Button slot="ar-button" className="ar-button">
+          <Rotate3D className="w-4 h-4" /> Se på din egen væg
+        </Button>
+      </div>
     </model-viewer>
   );
 }

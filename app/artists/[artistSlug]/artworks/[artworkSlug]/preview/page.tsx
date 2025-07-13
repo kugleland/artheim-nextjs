@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
+import Image from "next/image";
 
 const ARModelViewer = dynamic(() => import("@/components/ar-model-viewer"), {
   ssr: !!false,
@@ -11,24 +13,38 @@ export default async function ArtworkPreviewPage({
 }) {
   const { artistSlug, artworkSlug } = await params;
   const data = await fetch(
-    `https://app.ar-t.indev.dk/api/artists/${artistSlug}/artworks/${artworkSlug}`
+    `${process.env.API_BASE_URL}/artists/${artistSlug}/artworks/${artworkSlug}`
   );
   const artwork = await data.json();
 
   return (
     <div>
-      <h1>{artwork.title}</h1>
-      <p>
-        by{" "}
-        {artwork.artist.alias ||
-          artwork.artist.first_name + " " + artwork.artist.last_name}
-      </p>
-      <p>{artwork.description}</p>
-      <p>{artwork.image}</p>
-      <p>
-        Dimensions: {artwork.width} x {artwork.height} cm
-      </p>
-      <p>Image: {artwork.primary_image_url}</p>
+      <div className=" py-12">
+        <div className="mx-auto max-w-7xl flex justify-between items-center">
+          <div className="mx-auto max-w-4xl lg:mx-0">
+            <p className="text-base/7 font-semibold text-neutral-600">
+              <Link href={`/artists/${artistSlug}`}>
+                {artwork.artist.alias ||
+                  artwork.artist.first_name + " " + artwork.artist.last_name}
+              </Link>
+            </p>
+            <h2 className="mt-2 text-5xl font-medium tracking-tight text-neutral-900 sm:text-7xl">
+              {artwork.title}
+            </h2>
+          </div>
+          <div className="mt-8 flex justify-end">
+            <Link href={`/artists/${artistSlug}`}>
+              <Image
+                src={artwork.artist.profile_image_url}
+                alt={artwork.artist.alias}
+                width={100}
+                height={100}
+                className="rounded-md grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="w-full h-full bg-neutral-50 rounded-lg shadow-inner my-6 p-6">
         <ARModelViewer
           src="/assets/models/simple-plane-front-back.glb"

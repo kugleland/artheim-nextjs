@@ -19,8 +19,11 @@ export default function Header() {
   const isActive = (href: string) => pathname.startsWith(href);
 
   return (
-    <header className="border-b py-3 flex items-center justify-between max-w-7xl mx-auto px-6 lg:px-3">
-      <Link href="/" className="text-sm font-bold">
+    <header className="border-b py-3 flex items-center justify-between max-w-7xl mx-auto ">
+      <Link
+        href="/"
+        className="text-sm font-bold border-2 border-black px-1 rounded"
+      >
         AR-T
       </Link>
 
