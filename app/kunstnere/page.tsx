@@ -13,6 +13,7 @@ type Artist = {
   alias: string;
   first_name: string;
   last_name: string;
+  slug: string;
   profile_image_url: string;
 };
 
@@ -32,7 +33,7 @@ export default async function Artists() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/artists">Kunstnere</BreadcrumbLink>
+              <BreadcrumbLink href="/kunstnere">Kunstnere</BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -76,7 +77,7 @@ export default async function Artists() {
                   <div className="mt-6">
                     <p className="text-sm text-gray-500">ART</p>
                     <h3 className="mt-1 font-semibold text-gray-900">
-                      <Link href={`/artists/${artist.id}`}>
+                      <Link href={`/kunstnere/${artist.slug}`}>
                         <span className="absolute inset-0"></span>
                         {artist.alias ||
                           artist.first_name + " " + artist.last_name}

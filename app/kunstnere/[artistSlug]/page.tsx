@@ -20,8 +20,6 @@ export default async function ArtistDetailPage({
   const data = await fetch(`${process.env.API_BASE_URL}/artists/${artistSlug}`);
   const artist = await data.json();
 
-  console.log(artist);
-
   return (
     <div>
       <div className="max-w-7xl mx-auto py-3">
@@ -32,11 +30,11 @@ export default async function ArtistDetailPage({
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/artists">Kunstnere</BreadcrumbLink>
+              <BreadcrumbLink href="/kunstnere">Kunstnere</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/artists/${artistSlug}`}>
+              <BreadcrumbLink href={`/kunstnere/${artistSlug}`}>
                 {artist.alias || artist.first_name + " " + artist.last_name}
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -73,7 +71,7 @@ export default async function ArtistDetailPage({
 
           <Button asChild>
             <Link
-              href={`/artists/${artistSlug}/artworks`}
+              href={`/kunstnere/${artistSlug}/vaerker`}
               className="mt-4 inline-block"
             >
               Se alle værker

@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 
 const navItems = [
-  { label: "Kunstnere", href: "/artists" },
-  { label: "Gallerier", href: "/galleries" },
-  { label: "Udstillinger", href: "/exhibitions" },
+  { label: "Kunstnere", href: "/kunstnere" },
+  { label: "Gallerier", href: "/gallerier" },
+  { label: "Udstillinger", href: "/udstillinger" },
 ];
 
 export default function Header() {

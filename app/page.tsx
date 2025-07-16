@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const ARModelViewer = dynamic(() => import("@/components/ar-model-viewer"), {
   ssr: !!false,
@@ -75,7 +76,7 @@ export default function Home() {
                     </p>
                     <div className="mt-6">
                       <Button asChild variant="default" size="lg">
-                        <Link href="/artists">Se kunstnere</Link>
+                        <Link href="/kunstnere">Se kunstnere</Link>
                       </Button>
                     </div>
                   </div>
@@ -181,6 +182,135 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 px-6 sm:gap-y-16 lg:grid-cols-2 lg:px-8">
+          <article className="mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg">
+            <time
+              dateTime="2020-03-16"
+              className="block text-sm/6 text-gray-600"
+            >
+              Mar 16, 2020
+            </time>
+            <h2
+              id="featured-post"
+              className="mt-4 text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl"
+            >
+              We’re incredibly proud to announce we have secured $75m in Series
+              B
+            </h2>
+            <p className="mt-4 text-lg/8 text-gray-600">
+              Libero neque aenean tincidunt nec consequat tempor. Viverra odio
+              id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum.
+              Velit viverra posuere vulputate volutpat nunc. Nunc netus sit
+              faucibus.
+            </p>
+            <div className="mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col">
+              <div className="flex">
+                <a
+                  href="#"
+                  className="text-sm/6 font-semibold text-indigo-600 hover:text-indigo-500"
+                  aria-describedby="featured-post"
+                >
+                  Continue reading <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+              <div className="flex lg:border-t lg:border-gray-900/10 lg:pt-8">
+                <a
+                  href="#"
+                  className="flex gap-x-2.5 text-sm/6 font-semibold text-gray-900"
+                >
+                  <Image
+                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                    className="size-6 flex-none rounded-full bg-gray-50"
+                    width={256}
+                    height={256}
+                  />
+                  Michael Foster
+                </a>
+              </div>
+            </div>
+          </article>
+          <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
+            <div className="-my-12 divide-y divide-gray-900/10">
+              <article className="py-12">
+                <div className="group relative max-w-xl">
+                  <time
+                    dateTime="2020-03-16"
+                    className="block text-sm/6 text-gray-600"
+                  >
+                    Mar 10, 2020
+                  </time>
+                  <h2 className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600">
+                    <a href="#">
+                      <span className="absolute inset-0"></span>
+                      Boost your conversion rate
+                    </a>
+                  </h2>
+                  <p className="mt-4 text-sm/6 text-gray-600">
+                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
+                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
+                    Sed exercitationem placeat consectetur nulla deserunt vel
+                    iusto corrupti dicta laboris incididunt.
+                  </p>
+                </div>
+                <div className="mt-4 flex">
+                  <a
+                    href="#"
+                    className="relative flex gap-x-2.5 text-sm/6 font-semibold text-gray-900"
+                  >
+                    <Image
+                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                      className="size-6 flex-none rounded-full bg-gray-50"
+                      width={256}
+                      height={256}
+                    />
+                    Lindsay Walton
+                  </a>
+                </div>
+              </article>
+              <article className="py-12">
+                <div className="group relative max-w-xl">
+                  <time
+                    dateTime="2020-03-10"
+                    className="block text-sm/6 text-gray-600"
+                  >
+                    Feb 12, 2020
+                  </time>
+                  <h2 className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600">
+                    <a href="#">
+                      <span className="absolute inset-0"></span>
+                      How to use search engine optimization to drive sales
+                    </a>
+                  </h2>
+                  <p className="mt-4 text-sm/6 text-gray-600">
+                    Optio sit exercitation et ex ullamco aliquid explicabo.
+                    Dolore do ut officia anim non ad eu. Magna laboris
+                    incididunt commodo elit ipsum.
+                  </p>
+                </div>
+                <div className="mt-4 flex">
+                  <a
+                    href="#"
+                    className="relative flex gap-x-2.5 text-sm/6 font-semibold text-gray-900"
+                  >
+                    <Image
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                      className="size-6 flex-none rounded-full bg-gray-50"
+                      width={256}
+                      height={256}
+                    />
+                    Tom Cook
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

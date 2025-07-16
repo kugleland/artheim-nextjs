@@ -32,6 +32,7 @@ export default async function ArtworkIndexPage({
     price_formatted: string;
     medium: string;
     year: string;
+    slug: string;
   };
 
   return (
@@ -44,18 +45,18 @@ export default async function ArtworkIndexPage({
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/artists">Kunstnere</BreadcrumbLink>
+              <BreadcrumbLink href="/kunstnere">Kunstnere</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/artists/${artistSlug}`}>
+              <BreadcrumbLink href={`/kunstnere/${artistSlug}`}>
                 {artistData.alias ||
                   artistData.first_name + " " + artistData.last_name}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/artists/${artistSlug}/artworks`}>
+              <BreadcrumbLink href={`/kunstnere/${artistSlug}/vaerker`}>
                 Værker
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -80,7 +81,7 @@ export default async function ArtworkIndexPage({
             </p>
           </div>
           <div className="mt-8 flex justify-end">
-            <Link href={`/artists/${artistSlug}`}>
+            <Link href={`/kunstnere/${artistSlug}`}>
               <Image
                 src={artistData.profile_image_url}
                 alt={artistData.alias}
@@ -108,7 +109,7 @@ export default async function ArtworkIndexPage({
                   <div>
                     <h3 className="text-sm text-gray-700">
                       <Link
-                        href={`/artists/${artistSlug}/artworks/${artwork.id}`}
+                        href={`/kunstnere/${artistSlug}/vaerker/${artwork.slug}`}
                       >
                         <span
                           aria-hidden="true"

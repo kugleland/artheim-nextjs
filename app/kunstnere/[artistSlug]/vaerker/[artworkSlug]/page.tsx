@@ -71,7 +71,7 @@ export default async function ArtworkDetailPage({
         <div className="mx-auto max-w-7xl flex justify-between items-center">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="text-base/7 font-semibold text-neutral-600">
-              <Link href={`/artists/${artistSlug}`}>
+              <Link href={`/kunstnere/${artistSlug}`}>
                 {artistData.alias ||
                   artistData.first_name + " " + artistData.last_name}
               </Link>
@@ -86,7 +86,7 @@ export default async function ArtworkDetailPage({
             </p>
           </div>
           <div className="mt-8 flex justify-end">
-            <Link href={`/artists/${artistSlug}`}>
+            <Link href={`/kunstnere/${artistSlug}`}>
               <Image
                 src={artistData.profile_image_url}
                 alt={artistData.alias}
@@ -142,7 +142,7 @@ export default async function ArtworkDetailPage({
           <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center">
             <Button asChild>
               <Link
-                href={`/artists/${artistSlug}/artworks/${artworkSlug}/preview`}
+                href={`/kunstnere/${artistSlug}/vaerker/${artworkSlug}/preview`}
                 className="no-underline"
               >
                 Se i 3D

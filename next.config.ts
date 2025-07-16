@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "app.ar-t.indev.dk",
       },
+      {
+        protocol: "https",
+        hostname: "*.unsplash.com",
+      },
     ],
   },
   allowedDevOrigins: ["http://localhost:3000", "192.168.68.109"],
@@ -22,6 +26,10 @@ const nextConfig: NextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  // i18n: {
+  //   locales: ["da-DK", "en-US"],
+  //   defaultLocale: "da-DK",
+  // },
 };
 
 export default nextConfig;

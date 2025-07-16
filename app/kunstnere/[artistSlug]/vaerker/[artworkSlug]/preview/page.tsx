@@ -23,7 +23,7 @@ export default async function ArtworkPreviewPage({
         <div className="mx-auto max-w-7xl flex justify-between items-center">
           <div className="mx-auto max-w-4xl lg:mx-0">
             <p className="text-base/7 font-semibold text-neutral-600">
-              <Link href={`/artists/${artistSlug}`}>
+              <Link href={`/kunstnere/${artistSlug}`}>
                 {artwork.artist.alias ||
                   artwork.artist.first_name + " " + artwork.artist.last_name}
               </Link>
@@ -33,7 +33,7 @@ export default async function ArtworkPreviewPage({
             </h2>
           </div>
           <div className="mt-8 flex justify-end">
-            <Link href={`/artists/${artistSlug}`}>
+            <Link href={`/kunstnere/${artistSlug}`}>
               <Image
                 src={artwork.artist.profile_image_url}
                 alt={artwork.artist.alias}
