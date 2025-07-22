@@ -41,25 +41,25 @@ export default async function ArtworkDetailPage({
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/artists">Kunstnere</BreadcrumbLink>
+              <BreadcrumbLink href="/kunstnere">Kunstnere</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/artists/${artistSlug}`}>
+              <BreadcrumbLink href={`/kunstnere/${artistSlug}`}>
                 {artistData.alias ||
                   artistData.first_name + " " + artistData.last_name}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/artists/${artistSlug}/artworks`}>
+              <BreadcrumbLink href={`/kunstnere/${artistSlug}/vaerker`}>
                 Værker
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink
-                href={`/artists/${artistSlug}/artworks/${artworkSlug}`}
+                href={`/kunstnere/${artistSlug}/vaerker/${artworkSlug}`}
               >
                 {artwork.title}
               </BreadcrumbLink>
